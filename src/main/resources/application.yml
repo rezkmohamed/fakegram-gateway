@@ -1,0 +1,21 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+      - id: authModule
+        uri: http://localhost:8080/
+        predicates:
+        - Path=/auth/**
+      - id: socialModule
+        uri: http://localhost:8081/
+        predicates:
+        - Path=/social/**
+      - id: askModule
+        uri: http://localhost:8082/
+        predicates:
+        - Path=/ask/**
