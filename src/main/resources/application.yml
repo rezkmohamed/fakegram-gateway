@@ -19,3 +19,10 @@ spring:
         uri: http://localhost:8083/
         predicates:
         - Path=/ask/**
+        
+keycloak:
+  realm: javatechie
+  auth-server-url: http://localhost:8180
+  resource: springboot-keycloak
+  public-client: true
+  bearer-only: true
